@@ -10,13 +10,17 @@
   },
   "dependencies": {
     "@types/node": "20.4.6",
-    "@types/react": "18.2.18",
-    "@types/react-dom": "18.2.7",
+    "@types/react": "^18.2.18",
+    "@types/react-dom": "^18.2.7",
     "eslint": "8.46.0",
     "eslint-config-next": "13.4.12",
-    "next": "13.4.12",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
+    "fs": "^0.0.1-security",
+    "next": "^13.4.12",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "remark": "^14.0.3",
+    "remark-html": "^15.0.2",
+    "styled-components": "^6.0.7",
     "typescript": "5.1.6"
   }
 }
