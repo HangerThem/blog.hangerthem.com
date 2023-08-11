@@ -1,20 +1,21 @@
 "use client";
 
-import Link from "next/link";
-import { posts, generateSlug } from "@/utils/data";
+import PostCard from "@/components/postCard";
+import ContactCard from "@/components/contactCard";
+import { PageContainer } from "@/styles/pageStyle";
+import { posts } from "@/utils/posts";
 
 const HomePage = () => {
+  posts.sort((a, b) => b.date.getTime() - a.date.getTime());
   return (
-    <div>
-      <h1>Welcome to My Blog</h1>
-      <ul>
+    <PageContainer>
+      <ContactCard />
+      <div>
         {posts.map((post) => (
-          <li key={post.id}>
-            <Link href={`/${generateSlug(post.title)}`}>{post.title}</Link>
-          </li>
+          <PostCard key={post.id} post={post} />
         ))}
-      </ul>
-    </div>
+      </div>
+    </PageContainer>
   );
 };
 

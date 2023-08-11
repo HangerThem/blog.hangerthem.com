@@ -1,7 +1,8 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import { posts, generateSlug } from "@/utils/data";
+import { generateSlug } from "@/utils/generateSlug";
+import { posts } from "@/utils/posts";
 
 const BlogPost = () => {
   const slug = usePathname().replace("/", "");
@@ -14,7 +15,7 @@ const BlogPost = () => {
   return (
     <div>
       <h1>{post.title}</h1>
-      <p>{post.date.toUTCString().split(" ").slice(0, 4).join(" ")}</p>
+      <p>{post.date.toLocaleDateString()}</p>
       <p>{post.content}</p>
     </div>
   );
