@@ -7,9 +7,11 @@ const Footer = () => {
   return (
     <FooterContainer>
       Made with ❤️ by{" "}
-      <Link href="https://github.com/HangerThem" target="_blank">
-        <LinkStyle>HangerThem</LinkStyle>
-      </Link>
+      <LinkStyle>
+        <Link href="https://github.com/HangerThem" target="_blank">
+          HangerThem
+        </Link>
+      </LinkStyle>
     </FooterContainer>
   );
 };

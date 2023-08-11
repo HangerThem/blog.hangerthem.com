@@ -11,7 +11,9 @@ import Link from "next/link";
 const Navigation = () => {
   return (
     <Header>
-      <HeaderTitle>Ephemeris</HeaderTitle>
+      <HeaderTitle>
+        <Link href="/">Ephemeris</Link>
+      </HeaderTitle>
       <HeaderLinks>
         <HeaderLink>
           <Link href="https://hangerthem.com">Home</Link>

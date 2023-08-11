@@ -1,11 +1,10 @@
-"use client";
-
 import Link from "next/link";
 import {
   PostCardContainer,
   PostCardTitle,
   PostCardDivider,
   PostCardDetails,
+  PostLink,
 } from "./postCardStyle";
 import { generateSlug } from "@/utils/generateSlug";
 
@@ -15,16 +14,19 @@ interface PostCardProps {
     title: string;
     date: Date;
     type: string;
-    content: string;
+    content: Array<any>;
   };
 }
 
 const PostCard = ({ post }: PostCardProps) => {
+  const firstParagraph = post.content.find((item) => item.type === "paragraph");
+  const truncatedText = firstParagraph?.content.text.slice(0, 150);
+
   return (
     <PostCardContainer key={post.id}>
-      <Link href={`/${generateSlug(post.title)}`}>
-        <PostCardTitle>{post.title}</PostCardTitle>
-      </Link>
+      <PostCardTitle>
+        <Link href={`/${generateSlug(post.title)}`}>{post.title}</Link>
+      </PostCardTitle>
       <PostCardDivider />
       <div>
         <PostCardDetails>
@@ -32,9 +34,17 @@ const PostCard = ({ post }: PostCardProps) => {
           {post.type[0].toUpperCase() + post.type.slice(1)}
         </PostCardDetails>
         <div>
-          {post.content.length > 150
-            ? post.content.slice(0, 150) + "..."
-            : post.content}
+          {truncatedText && (
+            <p key={truncatedText}>
+              {truncatedText.length < 150
+                ? truncatedText
+                : truncatedText + "..."}
+              <br />
+              <PostLink>
+                <Link href={`/${generateSlug(post.title)}`}>Read more</Link>
+              </PostLink>
+            </p>
+          )}
         </div>
       </div>
     </PostCardContainer>

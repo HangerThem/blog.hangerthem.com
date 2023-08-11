@@ -13,6 +13,10 @@ export const Header = styled.div`
 export const HeaderTitle = styled.h1`
   font-size: 2.5rem;
   margin: 0;
+  a {
+    color: #fff;
+    text-decoration: none;
+  }
 `;
 
 export const HeaderLinks = styled.div`

@@ -1,3 +1,4 @@
 export function generateSlug(title: string): string {
-  return title.toLowerCase().replace(/\s+/g, "-");
+  const slug = title.toLowerCase().replace(/[^a-z0-9]+/g, "-");
+  return slug.endsWith("-") ? slug.slice(0, -1) : slug;
 }

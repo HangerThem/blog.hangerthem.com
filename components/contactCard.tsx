@@ -1,9 +1,9 @@
 "use client";
 
-import email from "@/icons/email.svg";
-import github from "@/icons/github.svg";
-import linkedin from "@/icons/linkedin.svg";
-import twitter from "@/icons/twitter.svg";
+import email from "@/public/static/icons/email.svg";
+import github from "@/public/static/icons/github.svg";
+import linkedin from "@/public/static/icons/linkedin.svg";
+import twitter from "@/public/static/icons/twitter.svg";
 import Link from "next/link";
 import Image from "next/image";
 import { ContactCardContainer, ContactCardLink } from "./contactCardStyle";
@@ -24,7 +24,10 @@ const ContactCard = () => {
         </Link>
       </ContactCardLink>
       <ContactCardLink>
-        <Link href="https://www.linkedin.com/in/hangerthem/" target="_blank">
+        <Link
+          href="https://www.linkedin.com/in/franti%C5%A1ek-borisjuk-022686225/"
+          target="_blank"
+        >
           <Image src={linkedin} alt="linkedin" width={30} height={30} />
           LinkedIn
         </Link>

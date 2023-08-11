@@ -2,22 +2,48 @@
 
 import { usePathname } from "next/navigation";
 import { generateSlug } from "@/utils/generateSlug";
+import { PageContainer } from "@/styles/pageStyle";
 import { posts } from "@/utils/posts";
+import { PostContainer, PostError } from "@/styles/postStyle";
+import ContactCard from "@/components/contactCard";
+import Image from "next/image";
+import Link from "next/link";
 
 const BlogPost = () => {
   const slug = usePathname().replace("/", "");
   const post = posts.find((post) => generateSlug(post.title) === slug);
 
   if (!post) {
-    return <div>Post not found</div>;
+    return (
+      <PostError>
+        <div>Post not found</div>
+        <Link href="/">Go back</Link>
+      </PostError>
+    );
   }
 
   return (
-    <div>
-      <h1>{post.title}</h1>
-      <p>{post.date.toLocaleDateString()}</p>
-      <p>{post.content}</p>
-    </div>
+    <PageContainer>
+      <ContactCard />
+      <PostContainer>
+        <h1>{post.title}</h1>
+        <p>{post.date.toLocaleDateString()}</p>
+        {post.content.map((item: any, index) =>
+          item.type === "paragraph" ? (
+            <p key={index}>{item.content.text}</p>
+          ) : (
+            <Image
+              src={item.content.src || ""}
+              alt={item.content.alt || ""}
+              width={item.content.width}
+              height={item.content.height}
+              key={index}
+              style={{ maxWidth: "100%", height: "auto" }}
+            />
+          )
+        )}
+      </PostContainer>
+    </PageContainer>
   );
 };
 

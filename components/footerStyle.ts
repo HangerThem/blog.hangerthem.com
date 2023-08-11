@@ -13,10 +13,12 @@ export const FooterContainer = styled.div`
 `;
 
 export const LinkStyle = styled.span`
-  color: #fff;
-  text-decoration: none;
-  &:hover {
+  a {
     color: #fff;
     text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 `;
