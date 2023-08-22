@@ -3,6 +3,12 @@ import styled from "styled-components";
 export const PostCardContainer = styled.div`
   padding: 1rem;
   width: 650px;
+  display: flex;
+  flex-direction: column;
+
+  p {
+    margin-bottom: 0.5rem;
+  }
 `;
 
 export const PostCardTitle = styled.h2`

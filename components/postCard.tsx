@@ -39,12 +39,11 @@ const PostCard = ({ post }: PostCardProps) => {
               {truncatedText.length < 150
                 ? truncatedText
                 : truncatedText + "..."}
-              <br />
-              <PostLink>
-                <Link href={`/${generateSlug(post.title)}`}>Read more</Link>
-              </PostLink>
             </p>
           )}
+          <PostLink>
+            <Link href={`/${generateSlug(post.title)}`}>Read more</Link>
+          </PostLink>
         </div>
       </div>
     </PostCardContainer>

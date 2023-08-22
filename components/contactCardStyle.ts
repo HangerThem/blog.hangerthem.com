@@ -9,6 +9,10 @@ export const ContactCardContainer = styled.div`
   left: 10%;
   top: 20%;
   padding: 1rem;
+
+  @media screen and (max-width: 375px) {
+    position: relative;
+  }
 `;
 
 export const ContactCardLink = styled.div`

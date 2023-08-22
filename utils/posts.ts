@@ -25,7 +25,7 @@ export const posts: IPost[] = [
           src: "/static/images/borisjuk_01.png",
           width: 500,
           height: 500,
-          alt: "Image",
+          alt: "Image of me (Frank Borisjuk)",
         },
       },
     ],
