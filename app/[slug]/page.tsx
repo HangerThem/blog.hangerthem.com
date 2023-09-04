@@ -3,7 +3,7 @@
 import { usePathname } from "next/navigation";
 import { generateSlug } from "@/utils/generateSlug";
 import { PageContainer } from "@/styles/pageStyle";
-import { posts } from "@/utils/posts";
+import { posts } from "@/data/posts";
 import { PostContainer, PostError } from "@/styles/postStyle";
 import ContactCard from "@/components/contactCard";
 import Image from "next/image";

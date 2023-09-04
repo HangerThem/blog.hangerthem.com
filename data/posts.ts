@@ -30,4 +30,24 @@ export const posts: IPost[] = [
       },
     ],
   },
+  {
+    id: 2,
+    date: new Date("2023-09-01"),
+    type: "post",
+    title: "New school year",
+    content: [
+      {
+        type: "paragraph",
+        content: {
+          text: "So the new school year has started. I am now in my final year of studying computer science at PSLIB. I am looking forward to the new subjects, but I am also a bit worried about the workload.",
+        },
+      },
+      {
+        type: "paragraph",
+        content: {
+          text: "I am also working on a new project, which I will hopefully be able to publish soon. I will write about it in one of the next posts.",
+        },
+      },
+    ],
+  }
 ];

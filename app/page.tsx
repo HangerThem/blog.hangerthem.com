@@ -3,7 +3,7 @@
 import PostCard from "@/components/postCard";
 import ContactCard from "@/components/contactCard";
 import { PageContainer } from "@/styles/pageStyle";
-import { posts } from "@/utils/posts";
+import { posts } from "@/data/posts";
 
 const HomePage = () => {
   posts.sort((a, b) => b.date.getTime() - a.date.getTime());
