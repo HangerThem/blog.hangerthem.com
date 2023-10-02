@@ -22,13 +22,23 @@ const BlogPost = () => {
     );
   }
 
+  if (typeof post.content !== "object" || !Array.isArray(post.content)) {
+    return (
+      <PostError>
+        <h1>Error: Invalid post content</h1>
+        <p>The post content must be an array of IContent objects.</p>
+        <Link href="/">Go back</Link>
+      </PostError>
+    );
+  }
+
   return (
     <PageContainer>
       <ContactCard />
       <PostContainer>
         <h1>{post.title}</h1>
         <p>{post.date.toLocaleDateString()}</p>
-        {post.content.map((item: any, index) =>
+        {post.content.map((item: any, index: number) =>
           item.type === "paragraph" ? (
             <p key={index}>{item.content.text}</p>
           ) : (

@@ -15,7 +15,7 @@ const HomePage = () => {
         {posts.map((item) => {
           switch (item.type) {
             case "post":
-              return <PostCard post={item} key={item.title} />;
+              return <PostCard post={item as any} key={item.title} />;
             case "quote":
               return <QuoteCard quote={item as any} key={item.title} />;
             default:
