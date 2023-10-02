@@ -5,5 +5,6 @@ export interface IPost {
   date: Date;
   type: "post" | "quote";
   title: string;
-  content: IContent[];
+  content: IContent[] | string;
+  author?: string;
 }

@@ -100,4 +100,12 @@ export const posts: IPost[] = [
       },
     ],
   },
+  {
+    id: 4,
+    date: new Date("2023-10-02"),
+    type: "quote",
+    title: "Something short",
+    content: "Life is a marathon, that's why I sprint.",
+    author: "HangerThem",
+  },
 ];
