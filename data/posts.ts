@@ -49,5 +49,55 @@ export const posts: IPost[] = [
         },
       },
     ],
-  }
+  },
+  {
+    id: 3,
+    date: new Date("2023-10-02"),
+    type: "post",
+    title: "September Adventures",
+    content: [
+      {
+        type: "paragraph",
+        content: {
+          text: "September has been a month filled with a rollercoaster of emotions and experiences. From the excitement of starting a new school year to the ups and downs of personal life, it's been quite a journey.",
+        },
+      },
+      {
+        type: "paragraph",
+        content: {
+          text: "As the new school year began, I found myself diving into the world of academics once again. The challenges of coursework and the pursuit of knowledge have kept me engaged.",
+        },
+      },
+      {
+        type: "image",
+        content: {
+          src: "",
+          width: 800,
+          height: 600,
+          alt: "Books and Laptop",
+        },
+      },
+      {
+        type: "paragraph",
+        content: {
+          text: "On the physical front, I've been dedicated to my fitness journey. Regular trips to the gym have allowed me to see noticeable progress, which is always motivating.",
+        },
+      },
+      {
+        type: "image",
+        content: {
+          src: "",
+          width: 800,
+          height: 600,
+          alt: "Gym Workout",
+        },
+      },
+      {
+        type: "paragraph",
+        content: {
+          text: "Life is a journey filled with its share of ups and downs, and this month has been no exception. Through it all, I've remained introspective and committed to personal growth.",
+        },
+      },
+    ],
+  },
 ];

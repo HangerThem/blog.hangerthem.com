@@ -6,6 +6,7 @@ export const PostContainer = styled.div`
   align-items: center;
   width: 750px;
   gap: 1rem;
+  margin-bottom: 1rem;
 `;
 
 export const PostError = styled.div`
