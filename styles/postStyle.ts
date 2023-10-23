@@ -3,10 +3,25 @@ import styled from "styled-components";
 export const PostContainer = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
   width: 750px;
   gap: 1rem;
-  margin-bottom: 1rem;
+  margin-bottom: 35vh;
+
+  h2 {
+    border-top: 1px solid #fff;
+    font-size: 1.5rem;
+    font-weight: 700;
+    padding-top: 1rem;
+    margin-top: 1rem;
+  }
+
+  ul {
+    margin-left: 2rem;
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+  }
 `;
 
 export const PostError = styled.div`

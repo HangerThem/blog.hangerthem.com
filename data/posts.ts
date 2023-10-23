@@ -22,7 +22,7 @@ export const posts: IPost[] = [
       {
         type: "image",
         content: {
-          src: "/static/images/borisjuk_01.png",
+          src: "borisjuk_01.png",
           width: 500,
           height: 500,
           alt: "Image",
@@ -71,7 +71,7 @@ export const posts: IPost[] = [
       {
         type: "image",
         content: {
-          src: "",
+          src: "books_and_laptop.jpg",
           width: 800,
           height: 600,
           alt: "Books and Laptop",
@@ -86,7 +86,7 @@ export const posts: IPost[] = [
       {
         type: "image",
         content: {
-          src: "",
+          src: "gym.png",
           width: 800,
           height: 600,
           alt: "Gym Workout",
@@ -107,5 +107,97 @@ export const posts: IPost[] = [
     title: "Something short",
     content: "Life is a marathon, that's why I sprint.",
     author: "HangerThem",
+  },
+  {
+    id: 5,
+    date: new Date("2023-10-23"),
+    type: "post",
+    title: "Starting a Dopamine Detox and Life Update",
+    author: "Frank Borisjuk",
+    content: [
+      {
+        type: "paragraph",
+        content: {
+          text: "Have you ever felt overwhelmed by the constant stream of information and distractions in our digital age? I certainly have. Today, I want to share my journey as I embark on a dopamine detox and provide you with an update on my life. Let's dive in and answer some essential questions.",
+        },
+      },
+      {
+        type: "title",
+        content: "What is a dopamine detox, and why am I doing it?",
+      },
+      {
+        type: "paragraph",
+        content: {
+          text: "A dopamine detox is a concept that's gained popularity in recent years. It's a method to reduce exposure to stimulating activities and substances to reset your brain's dopamine receptors. As a software developer, I've found myself constantly glued to screens, and it's affecting my focus and productivity. This detox is a step towards regaining control over my life and improving my mental well-being.",
+        },
+      },
+      {
+        type: "title",
+        content: "What does my detox plan look like?",
+      },
+      {
+        type: "paragraph",
+        content: {
+          text: "I'll be cutting down on excessive social media use, video games, and other distractions. Instead, I'll focus on productive activities like programming, reading, and engaging in some hobbies. I tought about finding and trying out even some new hobbies. It's about finding a balance that works for me.",
+        },
+      },
+      {
+        type: "list",
+        content: [
+          "Complete IG purge",
+          "YT daily time limiter",
+          "No Snapchat (only to keep streaks)",
+          "Journaling every evening",
+          "5AM alarm every day, go to bed 9-10PM",
+          "Cold shower every day (morning or gym)",
+          "Productive work before going to school",
+          "Gym 5 times a week (Monday to Friday)",
+          "Average at least 1h reading a day",
+          "Don't eat after 8PM",
+          "Meditating at least 10min a day in the morning after morning routine",
+          "Don't eat in the morning before productive work",
+          "First thing in the morning pain work",
+          "Configure phone into minimalistic non distracting design",
+          "Complete alcohol and nicotine purge",
+          "No junk food",
+          "No hookups",
+        ],
+      },
+      {
+        type: "title",
+        content: "What's new in my life?",
+      },
+      {
+        type: "paragraph",
+        content: {
+          text: "Besides the detox, I've been working on exciting programming projects. My dedication to self-improvement has been a driving force in my life. I'm also diving deep into my love for fantasy, both through reading and I am also thinking about picking a new hobby. I've been enjoying the process of learning new things and exploring new worlds.",
+        },
+      },
+      {
+        type: "image",
+        content: {
+          src: "me_in_catfe.png",
+          width: 800,
+          height: 400,
+          alt: "Me enjoying some downtime with a green  latte at a cat cafe",
+        },
+      },
+      {
+        type: "paragraph",
+        content: {
+          text: "Last week I also went to a cat cafe with my friends. It was a great experience, and I am looking forward to going there again.",
+        },
+      },
+      {
+        type: "title",
+        content: "How can you join me on this journey?",
+      },
+      {
+        type: "paragraph",
+        content: {
+          text: "You're invited to follow my progress on this blog as I share my experiences, challenges, and insights during the detox. If you've been considering a dopamine detox yourself, let's support each other on this quest to regain control over our digital lives and find a healthier balance.",
+        },
+      },
+    ],
   },
 ];

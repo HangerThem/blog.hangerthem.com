@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
 import "@/styles/global.css";
-import Footer from "@/components/footer";
-import Navigation from "@/components/navigation";
 
 export const metadata: Metadata = {
   title: "Ephemeris • HangerThem",
@@ -15,11 +13,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
-        <Navigation />
-        {children}
-        <Footer />
-      </body>
+      <body>{children}</body>
     </html>
   );
 }
