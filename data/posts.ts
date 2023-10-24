@@ -200,4 +200,13 @@ export const posts: IPost[] = [
       },
     ],
   },
+  {
+    id: 6,
+    date: new Date("2023-10-24"),
+    type: "quote",
+    title: "Thought of the day",
+    content:
+      "You should always have something to say, but you should not always say something.",
+    author: "HangerThem",
+  },
 ];
