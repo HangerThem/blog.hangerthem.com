@@ -209,4 +209,12 @@ export const posts: IPost[] = [
       "You should always have something to say, but you should not always say something.",
     author: "HangerThem",
   },
+  {
+    id: 7,
+    date: new Date("2023-10-26"),
+    type: "quote",
+    title: "On the future",
+    content: "I think it will get better, but I don't hope for it to happen",
+    author: "HangerThem",
+  },
 ];
