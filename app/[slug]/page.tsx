@@ -1,29 +1,29 @@
-"use client";
+"use client"
 
-import { usePathname } from "next/navigation";
-import { generateSlug } from "@/utils/generateSlug";
-import { PageContainer } from "@/styles/pageStyle";
-import { posts } from "@/data/posts";
-import { PostContainer, PostError } from "@/styles/postStyle";
-import { useState, useEffect } from "react";
-import ContactCard from "@/components/contactCard";
-import Image from "next/image";
-import Link from "next/link";
-import Navigation from "@/components/navigation";
-import Footer from "@/components/footer";
+import { usePathname } from "next/navigation"
+import { generateSlug } from "@/utils/generateSlug"
+import { PageContainer } from "@/styles/pageStyle"
+// import { posts } from "@/data/posts"
+import { PostContainer, PostError } from "@/styles/postStyle"
+import { useState, useEffect } from "react"
+import ContactCard from "@/components/contactCard"
+import Image from "next/image"
+import Link from "next/link"
+import Navigation from "@/components/navigation"
+import Footer from "@/components/footer"
 
 const BlogPost = () => {
-  const slug = usePathname().replace("/", "");
-  const post = posts.find((post) => generateSlug(post.title) === slug);
-  const [loading, setLoading] = useState(true);
+  // const slug = usePathname().replace("/", "")
+  // const post = posts.find((post) => generateSlug(post.title) === slug)
+  // const [loading, setLoading] = useState(true)
 
-  useEffect(() => {
-    setLoading(false);
-  }, []);
+  // useEffect(() => {
+  //   setLoading(false)
+  // }, [])
 
-  if (loading) {
-    return null;
-  }
+  // if (loading) {
+  //   return null
+  // }
 
   if (!post) {
     return (
@@ -35,7 +35,7 @@ const BlogPost = () => {
         </PostError>
         <Footer />
       </>
-    );
+    )
   }
 
   if (typeof post.content !== "object" || !Array.isArray(post.content)) {
@@ -49,7 +49,7 @@ const BlogPost = () => {
         </PostError>
         <Footer />
       </>
-    );
+    )
   }
 
   return (
@@ -86,7 +86,7 @@ const BlogPost = () => {
       </PageContainer>
       <Footer />
     </>
-  );
-};
+  )
+}
 
-export default BlogPost;
+export default BlogPost

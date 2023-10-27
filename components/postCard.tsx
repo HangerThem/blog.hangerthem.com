@@ -1,26 +1,26 @@
-import Link from "next/link";
+import Link from "next/link"
 import {
   PostCardContainer,
   PostCardTitle,
   PostCardDivider,
   PostCardDetails,
   PostLink,
-} from "./postCardStyle";
-import { generateSlug } from "@/utils/generateSlug";
+} from "./postCardStyle"
+import { generateSlug } from "@/utils/generateSlug"
 
 interface PostCardProps {
   post: {
-    id: number;
-    title: string;
-    date: Date;
-    type: string;
-    content: Array<any>;
-  };
+    id: number
+    title: string
+    date: Date
+    type: string
+    content: Array<any>
+  }
 }
 
 const PostCard = ({ post }: PostCardProps) => {
-  const firstParagraph = post.content.find((item) => item.type === "paragraph");
-  const truncatedText = firstParagraph?.content.text.slice(0, 150);
+  const firstParagraph = post.content.find((item) => item.type === "paragraph")
+  const truncatedText = firstParagraph?.content.text.slice(0, 150)
 
   return (
     <PostCardContainer key={post.id}>
@@ -48,7 +48,7 @@ const PostCard = ({ post }: PostCardProps) => {
         </div>
       </div>
     </PostCardContainer>
-  );
-};
+  )
+}
 
-export default PostCard;
+export default PostCard

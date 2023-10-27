@@ -1,10 +1,7 @@
-import { IContent } from "./IContent";
-
-export interface IPost {
+interface IPost {
   id: number;
   date: Date;
-  type: "post" | "quote";
+  author: string;
   title: string;
-  content: IContent[] | string;
-  author?: string;
+  content: (IParagraph | IImage | IHeader | IList)[];
 }

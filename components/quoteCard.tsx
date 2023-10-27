@@ -5,17 +5,17 @@ import {
   QuoteCardTitle,
   QuoteCardDivider,
   QuoteCardDetails,
-} from "./quoteCardStyle";
+} from "./quoteCardStyle"
 
 interface QuoteCardProps {
   quote: {
-    id: number;
-    title: string;
-    date: Date;
-    type: string;
-    content: string;
-    author: string;
-  };
+    id: number
+    title: string
+    date: Date
+    type: string
+    content: string
+    author: string
+  }
 }
 
 const QuoteCard = ({ quote }: QuoteCardProps) => {
@@ -30,7 +30,7 @@ const QuoteCard = ({ quote }: QuoteCardProps) => {
       <QuoteCardText>{quote.content}</QuoteCardText>
       <QuoteCardAuthor>- {quote.author}</QuoteCardAuthor>
     </QuoteCardContainer>
-  );
-};
+  )
+}
 
-export default QuoteCard;
+export default QuoteCard

@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "styled-components"
 
 export const Header = styled.div`
   background-color: #c90e0e;
@@ -8,7 +8,7 @@ export const Header = styled.div`
   justify-content: space-between;
   width: 100%;
   position: fixed;
-`;
+`
 
 export const HeaderTitle = styled.h1`
   font-size: 2.5rem;
@@ -17,7 +17,7 @@ export const HeaderTitle = styled.h1`
     color: #fff;
     text-decoration: none;
   }
-`;
+`
 
 export const HeaderLinks = styled.div`
   display: flex;
@@ -25,7 +25,7 @@ export const HeaderLinks = styled.div`
   justify-content: center;
   gap: 1rem;
   font-size: 1.5rem;
-`;
+`
 
 export const HeaderLink = styled.span`
   a {
@@ -35,4 +35,4 @@ export const HeaderLink = styled.span`
       text-decoration: underline;
     }
   }
-`;
+`

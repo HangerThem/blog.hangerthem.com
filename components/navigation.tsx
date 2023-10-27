@@ -1,12 +1,7 @@
-"use client";
+"use client"
 
-import {
-  Header,
-  HeaderTitle,
-  HeaderLinks,
-  HeaderLink,
-} from "./navigationStyle";
-import Link from "next/link";
+import { Header, HeaderTitle, HeaderLinks, HeaderLink } from "./navigationStyle"
+import Link from "next/link"
 
 const Navigation = () => {
   return (
@@ -24,7 +19,7 @@ const Navigation = () => {
         </HeaderLink>
       </HeaderLinks>
     </Header>
-  );
-};
+  )
+}
 
-export default Navigation;
+export default Navigation

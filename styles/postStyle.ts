@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "styled-components"
 
 export const PostContainer = styled.div`
   display: flex;
@@ -22,7 +22,7 @@ export const PostContainer = styled.div`
       margin-bottom: 0.5rem;
     }
   }
-`;
+`
 
 export const PostError = styled.div`
   display: flex;
@@ -42,4 +42,4 @@ export const PostError = styled.div`
       text-decoration: underline;
     }
   }
-`;
+`

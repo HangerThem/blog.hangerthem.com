@@ -1,5 +1,3 @@
-import { IPost } from "../interface/IPost";
-
 export const posts: IPost[] = [
   {
     id: 1,

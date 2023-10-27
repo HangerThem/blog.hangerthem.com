@@ -1,4 +1,5 @@
-export interface IImage {
+interface IImage {
+  type: "image";
   src: string;
   width: number;
   height: number;
