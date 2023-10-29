@@ -1,3 +1,5 @@
 interface ILoginResponse {
-  token: string
+  token?: string
+  user?: IUser
+  message?: string
 }

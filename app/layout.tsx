@@ -1,5 +1,8 @@
 import type { Metadata } from "next"
+import { AuthProvider } from "@/context/authContext"
 import "@/styles/global.css"
+import "@/styles/variables.css"
+import "@/styles/normalize.css"
 
 export const metadata: Metadata = {
   title: "Ephemeris • HangerThem",
@@ -13,7 +16,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <AuthProvider>{children}</AuthProvider>
+      </body>
     </html>
   )
 }

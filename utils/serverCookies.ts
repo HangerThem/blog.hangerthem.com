@@ -1,7 +1,10 @@
 import { serialize, CookieSerializeOptions } from "cookie"
 
 const getCookie = (key: string, cookies: any) => {
-  return cookies[key]
+  return cookies.split(";").reduce((acc: any, cookie: any) => {
+    const [name, value] = cookie.trim().split("=")
+    return name === key ? decodeURIComponent(value) : acc
+  }, "")
 }
 
 const setCookie = (key: string, value: string, expires: number, res: any) => {

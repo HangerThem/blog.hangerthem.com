@@ -1,7 +1,7 @@
 import jwt from "jsonwebtoken"
 
-export function createToken(payload: object) {
-  const secret: string | undefined = process.env.JWT_SECRET
+export function createToken(payload: TokenPayload | VerifyTokenPayload) {
+  const secret: string | undefined = process.env.NEXT_PUBLIC_JWT_SECRET
   if (!secret) {
     throw new Error("JWT_SECRET is not defined in the environment variables")
   }
@@ -11,7 +11,7 @@ export function createToken(payload: object) {
 }
 
 export function verifyToken(token: string) {
-  const secret: string | undefined = process.env.JWT_SECRET
+  const secret: string | undefined = process.env.NEXT_PUBLIC_JWT_SECRET
   if (!secret) {
     throw new Error("JWT_SECRET is not defined in the environment variables")
   }
@@ -19,5 +19,5 @@ export function verifyToken(token: string) {
 }
 
 export function decodeToken(token: string) {
-  return jwt.decode(token)
+  return jwt.decode(token) as TokenPayload | VerifyTokenPayload
 }

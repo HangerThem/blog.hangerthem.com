@@ -2,21 +2,42 @@ import prisma from "@/helpers/prismaHelper"
 import { hashPassword } from "@/utils/passwordUtils"
 import { createToken } from "@/utils/tokenUtils"
 import { sendEmail } from "@/utils/emailUtils"
+import { registerValidator } from "@/validators/registerValidator"
 
 export async function POST(req: any) {
-  const { email, password, name } = await req.json()
+  const { email, name, password, passwordConfirmation, terms } =
+    await req.json()
+  const errors = await registerValidator(
+    email,
+    name,
+    password,
+    passwordConfirmation
+  )
+  if (errors) {
+    return new Response(JSON.stringify(errors), {
+      status: 400,
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+  }
   const existingUser = await prisma.user.findUnique({
     where: {
       email,
     },
   })
   if (existingUser) {
-    return new Response(JSON.stringify({ message: "User already exists" }), {
-      status: 400,
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
+    return new Response(
+      JSON.stringify({
+        email: "Email already in use",
+      }),
+      {
+        status: 400,
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    )
   }
   const hashedPassword = await hashPassword(password)
   const token = createToken({ email })
@@ -28,7 +49,7 @@ export async function POST(req: any) {
       verifyToken: token,
     },
   })
-  const verificationLink = `${process.env.BASE_URL}/api/v1/auth/register/verify?token=${token}`
+  const verificationLink = `${process.env.BASE_URL}/register/verify/${token}`
   const adminEmail: string | undefined = process.env.ADMIN_EMAIL
   if (!adminEmail) {
     return new Response(JSON.stringify({ message: "Admin email not found" }), {
