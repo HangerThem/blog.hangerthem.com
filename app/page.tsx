@@ -1,47 +1,39 @@
-"use client";
+"use client"
 
-import PostCard from "@/components/postCard";
-import QuoteCard from "@/components/quoteCard";
-import ContactCard from "@/components/contactCard";
-import Navigation from "@/components/navigation";
-import Footer from "@/components/footer";
-import { PageContainer } from "@/styles/pageStyle";
-import { useState, useEffect } from "react";
-import { posts } from "@/data/posts";
+import { useEffect, useState } from "react"
+import { requestGetPosts } from "@/services/api-services/postServices"
+import PostCard from "@/components/cards/postCard"
+import { PageContainerNavbar } from "@/components/container/containerStyles"
+import { CardsContainer } from "@/components/container/containerStyles"
+import Navbar from "@/components/layout/navbar"
+import Footer from "@/components/layout/footer"
 
-const HomePage = () => {
-  const [loading, setLoading] = useState(true);
-  posts.sort((a, b) => b.id - a.id);
+export default function HomePage() {
+  const [posts, setPosts] = useState<Post[]>([])
+  const [loading, setLoading] = useState<boolean>(true)
 
   useEffect(() => {
-    setLoading(false);
-  }, []);
+    requestGetPosts().then((res) => {
+      setLoading(false)
+      if (!res.posts) return
+      res.posts.sort((a, b) => {
+        return new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
+      })
+      setPosts(res.posts)
+    })
+  }, [])
 
-  if (loading) {
-    return null;
-  }
+  if (loading) return null
 
   return (
-    <>
-      <Navigation />
-      <PageContainer>
-        <ContactCard />
-        <div>
-          {posts.map((item) => {
-            switch (item.type) {
-              case "post":
-                return <PostCard post={item as any} key={item.title} />;
-              case "quote":
-                return <QuoteCard quote={item as any} key={item.title} />;
-              default:
-                return null;
-            }
-          })}
-        </div>
-      </PageContainer>
+    <PageContainerNavbar>
+      <Navbar />
+      <CardsContainer>
+        {posts.map((post) => (
+          <PostCard key={post.id} post={post} />
+        ))}
+      </CardsContainer>
       <Footer />
-    </>
-  );
-};
-
-export default HomePage;
+    </PageContainerNavbar>
+  )
+}

@@ -1,0 +1,3 @@
+interface IUpdatePostData {
+  data: Post
+}

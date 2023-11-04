@@ -1,0 +1,3 @@
+interface IRegisterResponse {
+  email: string
+}

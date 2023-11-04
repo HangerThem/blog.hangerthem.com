@@ -1,6 +1,5 @@
-export interface IImage {
-  src: string;
-  width: number;
-  height: number;
-  alt: string;
+interface IImage {
+  src: string
+  name: string
+  description: string
 }

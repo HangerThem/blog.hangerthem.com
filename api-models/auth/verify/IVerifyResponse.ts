@@ -1,0 +1,3 @@
+interface IVerifyResponse {
+  email: string
+}

@@ -3,6 +3,9 @@ const nextConfig = {
   compiler: {
     styledComponents: true,
   },
-};
+  images: {
+    domains: ["cdn.hangerthem.com"],
+  },
+}
 
-module.exports = nextConfig;
+module.exports = nextConfig

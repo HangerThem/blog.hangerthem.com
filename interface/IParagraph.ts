@@ -1,7 +1,4 @@
-export interface IParagraph {
+interface IParagraph {
+  type: "paragraph";
   text: string;
-  link?: {
-    text: string;
-    href: string;
-  };
 }
