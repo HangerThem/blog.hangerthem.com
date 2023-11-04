@@ -11,6 +11,7 @@ async function requestGet<Res>(
       cache: cache ?? "no-store",
       headers: {
         "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*",
       },
       next: { revalidate: revalidate ?? 0 },
     })
@@ -29,6 +30,7 @@ async function requestPost<Res>(
       cache: cache ?? "no-store",
       headers: {
         "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*",
       },
       body: JSON.stringify(body),
       next: { revalidate: revalidate ?? 0 },
@@ -46,6 +48,9 @@ async function requestPostFormData<Res>(
     await fetch(API_URL + url, {
       method: "POST",
       cache: cache ?? "no-store",
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+      },
       body: body,
       next: { revalidate: revalidate ?? 0 },
     })
@@ -64,6 +69,7 @@ async function requestPatch<Res>(
       cache: cache ?? "no-store",
       headers: {
         "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*",
       },
       body: JSON.stringify(body),
       next: { revalidate: revalidate ?? 0 },
@@ -83,6 +89,7 @@ async function requestDelete<Res>(
       cache: cache ?? "no-store",
       headers: {
         "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*",
       },
       body: JSON.stringify(body),
       next: { revalidate: revalidate ?? 0 },
