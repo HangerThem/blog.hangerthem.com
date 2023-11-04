@@ -5,12 +5,8 @@ import { useEffect, ReactNode } from "react"
 import { verifyToken } from "@/utils/tokenUtils"
 import { useAuth } from "@/context/authContext"
 
-interface Props {
-  children?: ReactNode
-}
-
-const withAuth = (Component: React.FC<Props>) => {
-  const Auth = (props: Props) => {
+const withAuth = (Component: any) => {
+  const Auth = (props: any) => {
     const { token, login } = useAuth()
     const router = useRouter()
 

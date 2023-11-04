@@ -14,7 +14,7 @@ export default function TermsPage() {
         <p>Effective Date: 3rd of October 2023</p>
         <h2>1. Acceptance of Terms</h2>
         <p>
-          By accessing or using Ephemeris ("App"), you agree to be bound by
+          By accessing or using Ephemeris (&quot;App&quot;), you agree to be bound by
           these Terms and Conditions. If you do not agree with any part of these
           terms, you may not use the App.
         </p>
@@ -67,7 +67,7 @@ export default function TermsPage() {
         <h2>6. Disclaimers</h2>
         <ul>
           <li>
-            No Warranty: The App is provided "as is" without any warranty.
+            No Warranty: The App is provided &quot;as is&quot; without any warranty.
             Ephemeris makes no guarantees regarding the accuracy, availability,
             or performance of the App.
           </li>

@@ -92,7 +92,8 @@ const LoginForm = () => {
           Login
         </Button>
         <FormLink>
-          Don't have an account? <Link href="/register">Register here</Link>
+          Don&apos;t have an account?{" "}
+          <Link href="/register">Register here</Link>
         </FormLink>
       </Form>
     </FormContainer>

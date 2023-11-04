@@ -19,7 +19,7 @@ export default function PrivacyPolicy() {
           a secure and responsible manner. This Privacy Policy outlines our
           practices concerning the collection, use, and disclosure of your
           personal information in connection with your use of the Ephemeris
-          mobile application ("App").
+          mobile application (&quot;App&quot;).
         </p>
         <h2>2. Information We Collect</h2>
         <ul>
@@ -42,7 +42,7 @@ export default function PrivacyPolicy() {
             </li>
             <li>
               Comments and Interactions: Information you provide when you engage
-              with other users' content, such as leaving comments, likes, or
+              with other users&apos; content, such as leaving comments, likes, or
               shares.
             </li>
           </ul>
