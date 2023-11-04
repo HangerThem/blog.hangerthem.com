@@ -36,6 +36,22 @@ async function requestPost<Res>(
   ).json() as Res
 }
 
+async function requestPostFormData<Res>(
+  url: string,
+  body: any,
+  cache?: "no-store" | "force-cache",
+  revalidate?: number
+): Promise<Res> {
+  return (
+    await fetch(API_URL + url, {
+      method: "POST",
+      cache: cache ?? "no-store",
+      body: body,
+      next: { revalidate: revalidate ?? 0 },
+    })
+  ).json() as Res
+}
+
 async function requestPatch<Res>(
   url: string,
   body: any,
@@ -74,4 +90,10 @@ async function requestDelete<Res>(
   ).json() as Res
 }
 
-export { requestGet, requestPost, requestPatch, requestDelete }
+export {
+  requestGet,
+  requestPost,
+  requestPostFormData,
+  requestPatch,
+  requestDelete,
+}

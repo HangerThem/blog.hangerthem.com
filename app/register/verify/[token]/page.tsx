@@ -1,14 +1,11 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { requestVerify } from "@/services/api-services/authService"
+import { requestVerify } from "@/services/api-services/authServices"
 import { decodeToken } from "@/utils/tokenUtils"
-import {
-  FormContainer,
-  Form,
-  FormTitle,
-  FormButton,
-} from "@/components/forms/formStyles"
+import { FormContainer, Form, FormTitle } from "@/components/forms/formStyles"
+import Button from "@/components/buttons/button"
+import { PageContainer } from "@/components/container/containerStyles"
 
 export default function Verify({ params }: { params: { token: string } }) {
   const [userData, setUserData] = useState<any>({})
@@ -24,19 +21,28 @@ export default function Verify({ params }: { params: { token: string } }) {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     if (token) {
-      await requestVerify(token.toString()).then((res) => {})
+      await requestVerify(token.toString())
     }
   }
 
   return (
-    <FormContainer>
-      <Form onSubmit={handleSubmit}>
-        <FormTitle>Verify user</FormTitle>
-        <p>
-          Email: <b>{userData.email}</b>
-        </p>
-        <FormButton type="submit">Verify</FormButton>
-      </Form>
-    </FormContainer>
+    <PageContainer>
+      <FormContainer>
+        <Form onSubmit={handleSubmit}>
+          <FormTitle>Verify user</FormTitle>
+          <p>
+            Email: <b>{userData.email}</b>
+          </p>
+          <Button
+            type="submit"
+            variant="solid"
+            color="primary"
+            className="full-width"
+          >
+            Verify
+          </Button>
+        </Form>
+      </FormContainer>
+    </PageContainer>
   )
 }

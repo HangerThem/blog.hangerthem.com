@@ -1,4 +1,4 @@
-let post: IPost = {
+let post: Post = {
   id: 1,
   date: new Date(),
   author: "John Doe",

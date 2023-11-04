@@ -17,7 +17,22 @@ export const Form = styled.form`
   background-color: rgb(var(--night));
   padding: 2rem;
   border-radius: 1rem;
-  width: 350px;
+  margin: 1rem;
+  width: calc(100% - 2rem);
+  max-width: 350px;
+`
+
+export const NewPostForm = styled.form`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  background-color: rgb(var(--night));
+  border-radius: 1rem;
+  padding: 1rem;
+  margin: 1rem;
+  width: calc(100% - 2rem);
+  gap: 1rem;
 `
 
 export const FormTitle = styled.h1`
@@ -89,23 +104,6 @@ export const FormTextArea = styled.textarea`
   padding: 0.5rem;
   border: 1px solid #ccc;
   border-radius: 0.5rem;
-`
-
-export const FormButton = styled.button`
-  font-size: 1rem;
-  padding: 0.5rem;
-  margin-top: 1rem;
-  background-color: rgb(var(--cornell-red));
-  border: none;
-  border-radius: 0.5rem;
-  color: rgb(var(--timberwolf));
-  cursor: pointer;
-  width: 100%;
-  transition: background-color 0.2s ease-in-out;
-
-  &:hover {
-    background-color: rgb(var(--cornell-red-2));
-  }
 `
 
 export const FormError = styled.p`

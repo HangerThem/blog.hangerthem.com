@@ -1,7 +1,5 @@
 interface IImage {
-  type: "image";
-  src: string;
-  width: number;
-  height: number;
-  alt: string;
+  src: string
+  name: string
+  description: string
 }

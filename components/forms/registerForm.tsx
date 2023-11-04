@@ -5,7 +5,6 @@ import {
   FormError,
   FormInput,
   FormLabel,
-  FormButton,
   FormCheckbox,
   FormContainer,
   FormCheckboxLabel,
@@ -14,15 +13,19 @@ import {
   FormErrorList,
   FormLink,
 } from "@/components/forms/formStyles"
+import Button from "@/components/buttons/button"
 import { EyeFill, EyeSlashFill } from "react-bootstrap-icons"
 import { useState } from "react"
-import { requestRegister } from "@/services/api-services/authService"
+import { requestRegister } from "@/services/api-services/authServices"
 import { registerValidator } from "@/validators/registerValidator"
+import { Modal, ModalBody, ModalTitle } from "@/components/modal/modalStyles"
 import Link from "next/link"
 
 const RegistrationForm = () => {
-  const [showPassword, setShowPassword] = useState<Boolean>(false)
+  const [showPassword, setShowPassword] = useState<boolean>(false)
   const [errors, setErrors] = useState<IRegisterErrors>({})
+  const [isLoading, setIsLoading] = useState<boolean>(false)
+  const [popup, setPopup] = useState<boolean>(false)
 
   const togglePassword = () => {
     setShowPassword(!showPassword)
@@ -30,12 +33,12 @@ const RegistrationForm = () => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
+    setIsLoading(true)
     const formData = new FormData(e.currentTarget)
     const email = formData.get("email")
     const name = formData.get("name")
     const password = formData.get("password")
     const passwordConfirmation = formData.get("passwordConfirmation")
-    const terms = formData.get("terms")
 
     const newErrors: IRegisterErrors | undefined = await registerValidator(
       email?.toString() || "",
@@ -60,17 +63,35 @@ const RegistrationForm = () => {
           })
         } else {
           setErrors({})
+          setPopup(true)
         }
       })
     }
+    setIsLoading(false)
   }
 
   return (
     <FormContainer>
+      <Modal show={popup}>
+        <ModalBody>
+          <ModalTitle>Registertion successful</ModalTitle>
+          <p>
+            You have successfully registered. Please wait for the admin to
+            verify your account.
+          </p>
+          <Button
+            variant="solid"
+            color="primary"
+            onClick={() => setPopup(false)}
+          >
+            Close
+          </Button>
+        </ModalBody>
+      </Modal>
       <Form onSubmit={handleSubmit}>
         <FormTitle>Register</FormTitle>
         <FormField className={errors.email ? "error" : ""}>
-          <FormInput id="email" type="email" name="email" />
+          <FormInput id="email" type="text" name="email" />
           <FormLabel htmlFor="email">Email</FormLabel>
           {errors.email && <FormError>{errors.email}</FormError>}
         </FormField>
@@ -131,9 +152,15 @@ const RegistrationForm = () => {
             </FormLink>
           </FormCheckboxLabel>
         </FormFieldHorizontal>
-        <FormField>
-          <FormButton type="submit">Register</FormButton>
-        </FormField>
+        <Button
+          type="submit"
+          color="primary"
+          isLoading={isLoading}
+          className="full-width"
+          variant="solid"
+        >
+          Register
+        </Button>
         <FormLink>
           Already have an account? <Link href="/login">Login here</Link>
         </FormLink>

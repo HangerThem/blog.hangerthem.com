@@ -7,12 +7,12 @@ import {
   FormInput,
   FormError,
   FormTitle,
-  FormButton,
   FormContainer,
   FormPasswordVisibility,
 } from "@/components/forms/formStyles"
+import Button from "@/components/buttons/button"
 import { useState } from "react"
-import { requestLogin } from "@/services/api-services/authService"
+import { requestLogin } from "@/services/api-services/authServices"
 import { loginValidator } from "@/validators/loginValidator"
 import { useAuth } from "@/context/authContext"
 import { useRouter } from "next/navigation"
@@ -21,7 +21,8 @@ import Link from "next/link"
 
 const LoginForm = () => {
   const [errors, setErrors] = useState<ILoginErrors>({})
-  const [showPassword, setShowPassword] = useState<Boolean>(false)
+  const [showPassword, setShowPassword] = useState<boolean>(false)
+  const [isLoading, setIsLoading] = useState<boolean>(false)
   const router = useRouter()
   const { login } = useAuth()
 
@@ -31,6 +32,7 @@ const LoginForm = () => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
+    setIsLoading(true)
     const formData = new FormData(e.currentTarget)
     const email = formData.get("email")
     const password = formData.get("password")
@@ -55,6 +57,7 @@ const LoginForm = () => {
         }
       })
     }
+    setIsLoading(false)
   }
 
   return (
@@ -62,7 +65,7 @@ const LoginForm = () => {
       <Form onSubmit={handleSubmit}>
         <FormTitle>Login</FormTitle>
         <FormField className={errors.email ? "error" : ""}>
-          <FormInput type="email" name="email" id="email" />
+          <FormInput type="text" name="email" id="email" />
           <FormLabel htmlFor="email">Email</FormLabel>
           {errors.email && <FormError>{errors.email}</FormError>}
         </FormField>
@@ -79,9 +82,15 @@ const LoginForm = () => {
           </FormPasswordVisibility>
           {errors.password && <FormError>{errors.password}</FormError>}
         </FormField>
-        <FormField>
-          <FormButton type="submit">Login</FormButton>
-        </FormField>
+        <Button
+          type="submit"
+          color="primary"
+          isLoading={isLoading}
+          className="full-width"
+          variant="solid"
+        >
+          Login
+        </Button>
         <FormLink>
           Don't have an account? <Link href="/register">Register here</Link>
         </FormLink>

@@ -1,7 +1,12 @@
 "use client"
 
 import LoginForm from "@/components/forms/loginForm"
+import { PageContainer } from "@/components/container/containerStyles"
 
 export default function LoginPage() {
-  return <LoginForm />
+  return (
+    <PageContainer>
+      <LoginForm />
+    </PageContainer>
+  )
 }

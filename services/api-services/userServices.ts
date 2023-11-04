@@ -4,4 +4,8 @@ async function requestUser(): Promise<IUserResponse> {
   return await requestGet<IUserResponse>("/user")
 }
 
-export { requestUser }
+async function requestUserPosts(): Promise<IUserPostsResponse> {
+  return await requestGet<IUserPostsResponse>("/user/posts")
+}
+
+export { requestUser, requestUserPosts }

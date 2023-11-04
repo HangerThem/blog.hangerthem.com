@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import { AuthProvider } from "@/context/authContext"
+import { AppProvider } from "@/context/appContext"
 import "@/styles/global.css"
 import "@/styles/variables.css"
 import "@/styles/normalize.css"
@@ -17,7 +18,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <AuthProvider>{children}</AuthProvider>
+        <AppProvider>
+          <AuthProvider>
+            {children}
+          </AuthProvider>
+        </AppProvider>
       </body>
     </html>
   )

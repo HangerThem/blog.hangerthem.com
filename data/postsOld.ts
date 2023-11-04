@@ -1,4 +1,4 @@
-export const posts: IPost[] = [
+export const posts: Post[] = [
   {
     id: 1,
     date: new Date("2023-08-11"),
@@ -215,4 +215,4 @@ export const posts: IPost[] = [
     content: "I think it will get better, but I don't hope for it to happen",
     author: "HangerThem",
   },
-];
+]
