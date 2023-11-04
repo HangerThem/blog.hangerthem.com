@@ -4,7 +4,6 @@ import { useEffect, useState, useCallback } from "react"
 import selectStyles from "@/styles/selectStyles"
 import Select from "react-select"
 import hljs from "highlight.js"
-import SimpleMDE from "react-simplemde-editor"
 import Button from "@/components/buttons/button"
 import {
   FormContainer,
@@ -20,10 +19,16 @@ import { requestCreatePost } from "@/services/api-services/postServices"
 import { useApp } from "@/context/appContext"
 import "easymde/dist/easymde.min.css"
 import "highlight.js/styles/github.css"
+import dynamic from "next/dynamic"
+
+const SimpleMDE = dynamic(() => import("react-simplemde-editor"), {
+  ssr: false,
+})
 
 export default function NewPost() {
   const [isImageOpen, setIsImageOpen] = useState<boolean>(false)
   const [value, setValue] = useState<string>("")
+  const [loading, setLoading] = useState<boolean>(true)
   const { tagOptions, categoryOptions } = useApp()
 
   const onChange = useCallback((value: string) => {
@@ -32,6 +37,9 @@ export default function NewPost() {
 
   useEffect(() => {
     hljs.highlightAll()
+    if (typeof window !== "undefined" && typeof navigator !== "undefined") {
+      setLoading(false)
+    }
   }, [])
 
   useEffect(() => {
@@ -65,7 +73,9 @@ export default function NewPost() {
       })
   }
 
-  if (!categoryOptions || !tagOptions) return <div>Loading...</div>
+  if (loading) {
+    return null
+  }
 
   return (
     <FormContainer onKeyDown={(e: any) => handleShortCut(e)}>
