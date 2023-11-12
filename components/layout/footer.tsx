@@ -16,7 +16,7 @@ export default function Footer() {
       <FooterDivider />
       <FooterText>
         <Link
-          href="https://github.com/HangerThem/math-training-app"
+          href="https://github.com/HangerThem/blog.hangerthem.com"
           target="_blank"
         >
           Source Code
