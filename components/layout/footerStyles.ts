@@ -2,23 +2,23 @@ import styled from "styled-components"
 
 export const FooterContainer = styled.header`
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  height: 60px;
-  padding-inline: 20px;
   background-color: rgb(var(--night));
   width: 100%;
+  height: 100px;
+  gap: 0.75rem;
 
-  @media screen and (max-width: 768px) {
-    flex-direction: column;
-    gap: 8px;
-    height: fit-content;
-    padding: 16px;
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+    height: 60px;
+    justify-content: space-between;
+    gap: 0;
   }
 `
 
 export const FooterText = styled.p`
-  flex: 1;
   text-align: center;
   font-size: 1rem;
   color: rgb(var(--gray));
@@ -31,14 +31,18 @@ export const FooterText = styled.p`
       color: rgb(var(--silver));
     }
   }
+
+  @media screen and (min-width: 768px) {
+    flex: 1;
+  }
 `
 
 export const FooterDivider = styled.div`
-  width: 1px;
-  height: 35px;
-  background-color: rgb(var(--gray));
+  display: none;
 
-  @media screen and (max-width: 768px) {
-    display: none;
+  @media screen and (min-width: 768px) {
+    width: 1px;
+    height: 35px;
+    background-color: rgb(var(--gray));
   }
 `

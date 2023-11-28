@@ -16,10 +16,8 @@ export const Card = styled.div`
   gap: 4px;
   max-width: 750px;
   padding: 16px;
-  width: calc(100% - 2rem);
   margin-bottom: 16px;
   color: rgb(var(--timberwolf));
-  margin-inline: 1rem;
   position: relative;
 
   a {

@@ -1,0 +1,22 @@
+import { createGlobalStyle } from 'styled-components'
+
+export const VariableStyle = createGlobalStyle`
+  :root {
+    --night: 2, 3, 1;
+    --eerie-black: 22, 26, 29;
+    --blood-red: 102, 7, 8;
+    --cornell-red: 164, 22, 26;
+    --cornell-red-2: 186, 24, 27;
+    --imperial-red: 229, 56, 59;
+    --burgundy-red: 136, 23, 27;
+    --gray: 60, 60, 60;
+    --silver: 177, 167, 166;
+    --timberwolf: 211, 211, 211;
+    --white-smoke: 245, 243, 244;
+    --white: 255, 255, 255;
+    --success: 0, 128, 0;
+    --warning: 255, 165, 0;
+    --danger: 255, 0, 0;
+    --info: 0, 191, 255;
+  }
+`

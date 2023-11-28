@@ -1,7 +1,5 @@
 "use client"
 
-import { useEffect, useState } from "react"
-import { requestGetPost } from "@/services/api-services/postServices"
 import {
   PostPageContainer,
   PostDetails,
@@ -17,11 +15,10 @@ import {
 import Showdown from "showdown"
 
 interface PostProps {
-  slug: string
+  post: Post | undefined | null
 }
 
-const PostContainer: React.FC<PostProps> = ({ slug }) => {
-  const [post, setPost] = useState<Post>()
+const PostContainer: React.FC<PostProps> = ({ post }) => {
   const converter = new Showdown.Converter({
     completeHTMLDocument: true,
     ghCompatibleHeaderId: true,
@@ -33,13 +30,6 @@ const PostContainer: React.FC<PostProps> = ({ slug }) => {
     openLinksInNewWindow: true,
     emoji: true,
   })
-
-  useEffect(() => {
-    requestGetPost(slug).then((res) => {
-      if (!res.post) return
-      setPost(res.post)
-    })
-  }, [])
 
   if (!post) return <PostPageContainer />
 

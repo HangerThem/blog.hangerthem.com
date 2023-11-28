@@ -6,6 +6,7 @@ export const PageContainer = styled.div`
   align-items: center;
   flex-direction: column;
   min-height: 100vh;
+  position: relative;
 `
 
 export const PageContainerNavbar = styled.div`
@@ -13,6 +14,7 @@ export const PageContainerNavbar = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  position: relative;
   gap: 1rem;
 `
 
@@ -23,6 +25,7 @@ export const TextContainer = styled.div`
   padding: 2rem 0;
   gap: 1rem;
   max-width: 800px;
+  position: relative;
   margin: 0 auto;
 
   h1 {
@@ -66,7 +69,7 @@ export const CardsContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 16px;
-  height: calc(100vh - 135px - 2rem);
+  height: calc(100vh - 175px - 2rem);
   overflow-y: auto;
   scrollbar-width: thin;
   scrollbar-color: rgb(var(--timberwolf)) rgb(var(--eerie-black));
@@ -87,5 +90,9 @@ export const CardsContainer = styled.div`
 
   &::-webkit-scrollbar-thumb:hover {
     background: rgb(var(--timberwolf));
+  }
+
+  @media screen and (min-width: 768px) {
+    height: calc(100vh - 135px - 2rem);
   }
 `

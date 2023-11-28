@@ -26,4 +26,14 @@ async function requestUpdatePost(post: Post): Promise<IUpdatePostResponse> {
   return await requestPatch<IUpdatePostResponse>(`/posts`, post)
 }
 
-export { requestCreatePost, requestGetPosts, requestGetPost, requestUpdatePost }
+async function requestGetAllSlugs(): Promise<IGetAllSlugsResponse> {
+  return await requestGet<IGetAllSlugsResponse>(`/posts/slugs`)
+}
+
+export {
+  requestCreatePost,
+  requestGetPosts,
+  requestGetPost,
+  requestUpdatePost,
+  requestGetAllSlugs,
+}
