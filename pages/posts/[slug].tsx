@@ -28,7 +28,7 @@ export const getStaticProps: GetStaticProps<BlogPostProps> = async ({
   if (!params?.slug) return { props: { post: null } }
   const slug = params.slug as string
   const res = await requestGetPost(slug)
-  const post = res.post
+  const post = res.post ? res.post : null
 
   return {
     props: {
