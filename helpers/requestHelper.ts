@@ -13,7 +13,7 @@ async function requestGet<Res>(
         "Content-Type": "application/json",
         "Access-Control-Allow-Origin": "*",
       },
-      next: { revalidate: revalidate ?? 0 },
+      // next: { revalidate: revalidate ?? 0 },
     })
   ).json() as Res
 }
@@ -33,7 +33,7 @@ async function requestPost<Res>(
         "Access-Control-Allow-Origin": "*",
       },
       body: JSON.stringify(body),
-      next: { revalidate: revalidate ?? 0 },
+      // next: { revalidate: revalidate ?? 0 },
     })
   ).json() as Res
 }
@@ -52,7 +52,7 @@ async function requestPostFormData<Res>(
         "Access-Control-Allow-Origin": "*",
       },
       body: body,
-      next: { revalidate: revalidate ?? 0 },
+      // next: { revalidate: revalidate ?? 0 },
     })
   ).json() as Res
 }
@@ -72,7 +72,7 @@ async function requestPatch<Res>(
         "Access-Control-Allow-Origin": "*",
       },
       body: JSON.stringify(body),
-      next: { revalidate: revalidate ?? 0 },
+      // next: { revalidate: revalidate ?? 0 },
     })
   ).json() as Res
 }
@@ -92,7 +92,7 @@ async function requestDelete<Res>(
         "Access-Control-Allow-Origin": "*",
       },
       body: JSON.stringify(body),
-      next: { revalidate: revalidate ?? 0 },
+      // next: { revalidate: revalidate ?? 0 },
     })
   ).json() as Res
 }
