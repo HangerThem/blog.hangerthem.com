@@ -27,6 +27,7 @@ export const getStaticProps: GetStaticProps = async () => {
       props: {
         posts: [],
       },
+      revalidate: 60,
     }
   }
   const posts = res.posts.sort((a: any, b: any) => {
