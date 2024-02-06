@@ -54,7 +54,7 @@ const PostCard: React.FC<PostCardProps> = ({ post }) => {
         </CardAuthor>
       </CardDetails>
       <CardContent>
-        <p>{trunkedText(post.content)}</p>
+        <>{trunkedText(post.content)}</>
       </CardContent>
       <CardLink href={`/posts/${post.slug}`}>Read more</CardLink>
     </Card>

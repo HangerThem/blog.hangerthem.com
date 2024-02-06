@@ -46,9 +46,9 @@ export default function Navbar() {
       </NavHamburger>
       <NavbarLinks open={open}>
         <Link href="/">Home</Link>
-        <Link href="/posts/new">New Post</Link>
         {token ? (
           <>
+            <Link href="/posts/new">New Post</Link>
             <Link href="/profile">{name}</Link>|
             <Button
               onClick={() => logout()}

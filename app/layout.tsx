@@ -8,7 +8,7 @@ import "@/styles/normalize.css"
 
 export const metadata: Metadata = {
   title: "Ephemeris • HangerThem",
-  description: "Blog of one and only HangerThem",
+  description: "Blog of the one and only HangerThem",
 }
 
 export default function RootLayout({
@@ -18,7 +18,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
+      <body suppressHydrationWarning>
         <AppProvider>
           <AuthProvider>{children}</AuthProvider>
         </AppProvider>
