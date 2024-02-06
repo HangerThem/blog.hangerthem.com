@@ -1,5 +1,7 @@
 import prisma from "@/helpers/prismaHelper"
 
+export const dynamic = "force-dynamic"
+
 export async function GET(req: any) {
   const slugs: string[] = await prisma.post
     .findMany({
